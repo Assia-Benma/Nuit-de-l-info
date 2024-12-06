@@ -1,16 +1,22 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Pour que le corps occupe toute la hauteur de la fenêtre */
-    display: flex;
-    flex-direction: column; /* Colonne : contenu suivi du footer */
-}
-
-body {
-    justify-content: space-between; /* Sépare le contenu et le footer */
+    height: 100%;
     background-image: url("images/imageocean.png");
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Toujours en colonne */
+}
+
+.main-content {
+    flex-grow: 1; /* Permet d'occuper l'espace restant entre la nav et le footer */
+    padding: 20px; /* Ajoute de l'espace autour du texte */
+    color: black; /* Couleur du texte */
+    text-align: left; /* Texte aligné à gauche */
 }
 
 /* Logo dans la navbar */
