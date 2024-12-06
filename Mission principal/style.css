@@ -143,3 +143,51 @@ main section h1{
     color: #0c00cc;
     text-align: center;
 }
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    width: 600px;
+    height: auto;
+}
+#mainImage {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.zone {
+    pointer-events: auto;
+    position: absolute;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    opacity: 0;
+}
+.text-window {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 1);
+    color: white;
+    padding: 10px;
+    border-radius: 2px;
+    z-index: 10;
+}
+.text-window #closeBtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    cursor: pointer;
+    font-size: 32px;
+}
+
+*{
+    padding: 5px;
+}
