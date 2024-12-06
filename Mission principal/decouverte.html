@@ -31,6 +31,72 @@
     </div>
 </nav>
 
+    <h2>Cliquez sur les parties du corps</h2>
+
+<div class="image-container">
+    <img src="image.svg" alt="Image SVG" id="mainImage">
+    <div id="overlay">
+        <div class="zone" id="zone1" style="top: 5%; left: 45%; width: 10%; height: 7%;" data-text="Le cerveau humain est un réseau denses de neurones, liés entre eux par des synapses, qui coordonnent les fonctions cognitives, émotionnelles, et motrices. De manière similaire, l’océan est un vaste système connecté de courants marins, d’écosystèmes, et de cycles biochimiques. Tout comme le cerveau relie chaque partie du corps via des signaux nerveux, l’océan relie les continents en régulant le climat, en influençant les précipitations, et en alimentant la vie marine."></div>
+        <div class="zone" id="zone3" style="top: 23%; left: 40%; width: 20%; height: 10%;" data-text="Les poumons humains sont responsables de l’échange d’oxygène et de dioxyde de carbone, fournissant le carburant indispensable à toutes les cellules du corps. L’océan joue un rôle similaire à l’échelle planétaire : grâce au phytoplancton, il produit plus de 50 % de l’oxygène que nous respirons. Ce minuscule organisme, qui effectue la photosynthèse, agit comme les alvéoles des poumons humains, capturant le dioxyde de carbone et libérant l’oxygène nécessaire à la vie."></div>
+        <div class="zone" id="zone2" style="top: 25%; left: 49%; width: 7%; height: 5%;" data-text="Le cœur humain, en tant qu’organe vital, pompe le sang qui transporte l’oxygène et les nutriments essentiels à travers le corps. De même, l’océan agit comme le « cœur bleu » de la Terre. Il régule les climats, génère la majeure partie de l’oxygène que nous respirons grâce au phytoplancton, et fournit des ressources essentielles pour la survie de millions d’espèces."></div>
+        <div class="zone" id="zone4" style="top: 36%; left: 68%; width: 7%; height: 10%;" data-text="Les veines humaines forment un réseau complexe qui transporte le sang désoxygéné vers le cœur pour être réoxygéné. L’océan, avec ses courants marins, joue un rôle similaire en redistribuant la chaleur, les nutriments et l’énergie à travers le globe. Ces systèmes permettent de maintenir un équilibre essentiel pour la vie, que ce soit dans le corps ou sur Terre."></div>
+    </div>
+</div>
+<div id="textWindow" class="text-window">
+    <span id="closeBtn">&times;</span>
+    <p id="textContent">Texte ici</p>
+</div>
+
+<script>
+    const zones = document.querySelectorAll('.zone');
+    const mainImage = document.getElementById('mainImage');
+    const fullScreenOverlay = document.createElement('div');
+    fullScreenOverlay.style.position = 'fixed';
+    fullScreenOverlay.style.top = '0';
+    fullScreenOverlay.style.left = '0';
+    fullScreenOverlay.style.width = '100%';
+    fullScreenOverlay.style.height = '100%';
+    fullScreenOverlay.style.backgroundColor = 'black';
+    fullScreenOverlay.style.color = 'white';
+    fullScreenOverlay.style.display = 'flex';
+    fullScreenOverlay.style.justifyContent = 'center';
+    fullScreenOverlay.style.alignItems = 'center';
+    fullScreenOverlay.style.fontSize = '2rem';
+    fullScreenOverlay.style.zIndex = '1000';
+    fullScreenOverlay.style.display = 'none';
+    document.body.appendChild(fullScreenOverlay);
+    const closeOverlayButton = document.createElement('button');
+    closeOverlayButton.textContent = 'Fermer';
+    closeOverlayButton.style.position = 'absolute';
+    closeOverlayButton.style.top = '10px';
+    closeOverlayButton.style.right = '10px';
+    closeOverlayButton.style.padding = '10px 15px';
+    closeOverlayButton.style.fontSize = '1rem';
+    closeOverlayButton.style.backgroundColor = 'red';
+    closeOverlayButton.style.color = 'white';
+    closeOverlayButton.style.border = 'none';
+    closeOverlayButton.style.cursor = 'pointer';
+    closeOverlayButton.style.borderRadius = '5px';
+    fullScreenOverlay.appendChild(closeOverlayButton);
+    zones.forEach(zone => {
+        zone.addEventListener('click', () => {
+            const text = zone.getAttribute('data-text');
+            if (text) {
+                mainImage.style.display = 'none';
+                fullScreenOverlay.style.display = 'flex';
+                fullScreenOverlay.textContent = text;
+                fullScreenOverlay.appendChild(closeOverlayButton);
+            }
+        });
+    });
+    closeOverlayButton.addEventListener('click', () => {
+        fullScreenOverlay.style.display = 'none';
+        mainImage.style.display = 'block';
+    });
+    closeOverlayButton.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+</script>
 
 
 <footer>
