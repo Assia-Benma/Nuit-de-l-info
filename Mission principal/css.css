@@ -1,0 +1,123 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Pour que le corps occupe toute la hauteur de la fenêtre */
+    display: flex;
+    flex-direction: column; /* Colonne : contenu suivi du footer */
+}
+
+body {
+    justify-content: space-between; /* Sépare le contenu et le footer */
+    background-image: url("images/imageocean.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Logo dans la navbar */
+.logo_equipe {
+    height: 80px;
+    border-radius: 10px;
+}
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 20px; /* Décale chaque lien de 20px à gauche */
+}
+
+/* Logo de l'événement dans la navbar */
+.logo_event img {
+    display: block;
+    margin-top: 10px;
+    height: 80px;
+    width: auto;
+    border-radius: 15px;
+}
+
+.equipe{
+    display: flex;
+}
+
+/* Footer général */
+footer {
+    background-color: #051923;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.regroupe {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Align items vertically in the center */
+    gap: 20px; /* Space between items */
+}
+
+.equipe, .event, .iut {
+    display: flex;
+    flex-direction: column; /* Align content in a column within each section */
+    justify-content: center; /* Vertically center the content */
+}
+
+.equipe p{
+    text-align: center;
+    justify-self: center;
+    margin-left: 120px;
+    padding-bottom: -10px;
+    color: white;
+}
+
+.event img{
+    width: 100px;
+    height: 100px;
+    margin-right: -100px;
+}
+details {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre le contenu horizontalement */
+    justify-content: center; /* Centre le contenu verticalement */
+    color: white;
+}
+
+details > summary {
+    display: inline-flex; /* Aligne flèche et texte horizontalement */
+    align-items: center; /* Aligne flèche et texte verticalement */
+    cursor: pointer;
+    text-align: center; /* Centre le texte */
+    padding: 10px 20px; /* Ajoute un peu de marge autour du rizzler */
+    margin-left: 120px;
+}
+
+details > summary::before {
+    content: ''; /* Pas de texte, seulement un triangle */
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid white;
+}
+
+
+details[open] > summary::before {
+    transform: rotate(90deg); /* Fait tourner la flèche lorsque ouvert */
+    transition: transform 0.3s ease;
+}
+details > *:not(summary) {
+    text-align: center; /* Centre les éléments sous le summary */
+    margin-top: 10px; /* Ajoute un espace entre le summary et le contenu */
+    color: black; /* Couleur du texte */
+    font-size: 18px; /* Taille du texte */
+}
+.reseau p{
+    text-align: center;
+    justify-self: center;
+    margin-left: 120px;
+    padding-bottom: -10px;
+    color: white;
+}
+.iut {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 50px; /* Décale la div IUT vers la gauche */
+}
