@@ -4,6 +4,7 @@ html, body {
     height: 100%; /* Pour que le corps occupe toute la hauteur de la fenêtre */
     display: flex;
     flex-direction: column; /* Colonne : contenu suivi du footer */
+    background-color: #F4CD8E;
 }
 
 body {
